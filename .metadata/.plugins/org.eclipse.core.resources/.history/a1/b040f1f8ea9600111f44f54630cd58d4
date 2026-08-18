@@ -1,0 +1,5 @@
+package com.klef.ms.dto;
+
+public class ProductRequest {
+
+}
