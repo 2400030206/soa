@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.klef.ms.dto.UserResquest;
+import com.klef.ms.dto.OrderResponse;
+import com.klef.ms.dto.ProductResponse;
 import com.klef.ms.dto.UserResponse;
 import com.klef.ms.service.UserService;
 
@@ -66,4 +69,17 @@ public class UserController
 
            return ResponseEntity.ok("User deleted successfully.");
        }
+       @GetMapping("/allproducts")
+       public ResponseEntity<List<ProductResponse>> displayallproduct() {
+    	   List<ProductResponse>product=service.getAllProducts();
+    	   return ResponseEntity.ok(product);
+ 	   
+       }
+       
+       @GetMapping("/displayorderbyuserid")
+       public ResponseEntity<List<OrderResponse>> displayordersbyuserid(@RequestParam long userid){
+    	   
+    	   return ResponseEntity.ok(service.displayOrderbyuserId(userid));
+       }
+       
 } 

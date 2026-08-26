@@ -16,6 +16,5 @@ public class OrderRequest
     @Positive(message = "Quantity must be positive")
     private Integer quantity;
 
-    @Positive(message = "Total amount must be positive")
-    private Double totalAmount;
+
 }

@@ -7,18 +7,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.klef.ms.dto.UserResquest;
+import com.klef.ms.client.OrderClient;
+import com.klef.ms.client.ProductClient;
+import com.klef.ms.dto.OrderResponse;
+import com.klef.ms.dto.ProductResponse;
 import com.klef.ms.dto.UserResponse;
 import com.klef.ms.entity.User;
 import com.klef.ms.exception.ResourceNotFoundException;
 
 import com.klef.ms.repository.UserRespository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService 
 {
 	@Autowired
 	private UserRespository repository;
-
+    private final ProductClient productClient;
+    private final OrderClient  orderClient;
     @Override
     public UserResponse saveUser(UserResquest request) 
     {
@@ -94,6 +102,16 @@ public class UserServiceImpl implements UserService
                 .role(user.getRole())
                 .build();
     }
+
+	@Override
+	public List<ProductResponse> getAllProducts() {
+		return productClient.getAllProducts();
+	}
+
+	@Override
+	public List<OrderResponse> displayOrderbyuserId(Long userid) {
+		return orderClient.displayordersbyuserid(userid);
+	}
 
 	
 

@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=D\:\\SOA PRATICES\\backend\\ASSIGNMENT-1\\.git;D\:\\SOA PRATICES\\backend\\SpringBoatDemoProject\\.git;
-GitRepositoriesView.GitDirectories.relative=ASSIGNMENT-1\\.git;SpringBoatDemoProject\\.git;
+GitRepositoriesView.GitDirectories=D\:\\SOA PRATICES\\backend\\.git;D\:\\SOA PRATICES\\backend\\ASSIGNMENT-1\\.git;D\:\\SOA PRATICES\\backend\\SpringBoatDemoProject\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;ASSIGNMENT-1\\.git;SpringBoatDemoProject\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

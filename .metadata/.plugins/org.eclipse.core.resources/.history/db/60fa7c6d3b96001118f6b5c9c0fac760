@@ -1,7 +1,0 @@
-package com.klef.ms.exception;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public class UserRespository implements JpaRepository<User, ID> {
-
-}

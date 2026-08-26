@@ -1,9 +1,0 @@
-package com.klef.ms.exception;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.klef.ms.entity.User;
-@re
-public interface UserRespository extends JpaRepository<User, Long> {
-
-}
