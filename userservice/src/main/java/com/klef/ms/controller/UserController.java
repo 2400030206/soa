@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.klef.ms.dto.UserResquest;
+import com.klef.ms.dto.LoginRequest;
 import com.klef.ms.dto.OrderResponse;
 import com.klef.ms.dto.ProductResponse;
 import com.klef.ms.dto.UserResponse;
@@ -72,6 +73,8 @@ public class UserController
        @GetMapping("/allproducts")
        public ResponseEntity<List<ProductResponse>> displayallproduct() {
     	   List<ProductResponse>product=service.getAllProducts();
+    	 
+
     	   return ResponseEntity.ok(product);
  	   
        }
@@ -80,6 +83,12 @@ public class UserController
        public ResponseEntity<List<OrderResponse>> displayordersbyuserid(@RequestParam long userid){
     	   
     	   return ResponseEntity.ok(service.displayOrderbyuserId(userid));
+       }
+       
+       @PostMapping("/login")
+       public ResponseEntity<UserResponse> userlogin(@Valid @RequestBody LoginRequest request) {
+    	   UserResponse response=service.userlogin(request);
+    		    return ResponseEntity.ok(response);    	       	   
        }
        
 } 

@@ -54,5 +54,16 @@ public class GlobalExceptionHandler
                 HttpStatus.INTERNAL_SERVER_ERROR);
 
     }
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<Map<String, Object>> handleUnauthorizedException(UnauthorizedException e)
+    {
 
+    Map<String, Object> response = new HashMap<>();
+
+    response.put("timestamp", LocalDateTime.now());
+    response.put("status", HttpStatus.UNAUTHORIZED.value());
+    response.put("message", e.getMessage());
+
+    return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+    }
 }

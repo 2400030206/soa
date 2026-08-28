@@ -260,3 +260,17 @@
 {"logTime": "0826/122403", "session": "START"}
 {"logTime": "0826/125415", "session": "END"}
 {"logTime": "0826/140144", "session": "START"}
+{"logTime": "0826/152557", "session": "END"}
+{"logTime": "0826/155306", "session": "START"}
+{"logTime": "0826/164855", "session": "END"}
+{"logTime": "0827/053830", "session": "START"}
+{"logTime": "0827/063314", "session": "END"}
+{"logTime": "0827/084525", "session": "START"}
+{"logTime": "0827/085552", "session": "END"}
+{"logTime": "0827/090152", "session": "START"}
+{"logTime": "0827/090301", "session": "END"}
+{"logTime": "0827/101605", "session": "START"}
+{"logTime": "0827/101610", "level": "INFO", "location": "components\\sessions\\core\\command_storage_manager.cc:618 operator()", "message": "No valid session file found: SessionRestore"}
+{"logTime": "0827/101610", "level": "INFO", "location": "components\\sessions\\core\\command_storage_manager.cc:618 operator()", "message": "Last session file not found for SessionType : SessionRestore"}
+{"logTime": "0827/115712", "session": "END"}
+{"logTime": "0828/014539", "session": "START"}

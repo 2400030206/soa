@@ -3,6 +3,7 @@ package com.klef.ms.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -27,7 +28,15 @@ import jakarta.validation.Valid;
 public class ProductController 
 {
     @Autowired
-    private ProductService service;
+    private ProductService service; 
+    @Value("${server.port}")
+    private String port;
+
+    @GetMapping("/instance")
+    public String instance()
+    {
+    return "Product Service instance running on port: " + port;
+    }
 
     @GetMapping("/")
     public String home()
@@ -44,6 +53,7 @@ public class ProductController
     @GetMapping("displayall")
     public ResponseEntity<List<ProductResponse>> getAllProducts() 
     {
+    	System.out.println("Product Service instance running on port: " + port);
         return ResponseEntity.ok(service.getAllProducts());
     }
 
